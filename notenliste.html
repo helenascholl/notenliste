@@ -2,15 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Schüler Klassen Zeug</title>
+    <title>Notenliste</title>
   </head>
-  <body>
-      <script src="js/daten.js"></script>
+  <body onload="declareForm()">
+
+    <script src="./js/daten.js"></script>
     <script>
 
-      
+      function declareForm() {
+          document.write('<form onchange="refreshForm()">');
 
-      array["Dorfi"] = "";
+          document.write('<select id="klassen">');
+          for (let i in klassen) {
+            document.write('<option>' + i + '</option>');
+          }
+
+          refreshForm();
+
+          document.write('</form>');
+
+      }
+
+      function refreshForm() {
+            document.write('<select>');
+            for (let i in klassen[document.getElementById('klassen').value]['Faecher']) {
+              document.write('<option>' + i + '</option>');
+            }
+            document.write('</select>');
+
+            document.write('<select>');
+            for (let i in klassen[document.getElementById('klassen').value]['Schueler']) {
+              document.write('<option>' + i + '</option>');
+            }
+            document.write('</select>');
+      }
+
+      /*array["Dorfi"] = "";
       array["Fuchs"] = "";
       array["Lukas"] = "";
 
@@ -38,7 +65,7 @@
         document.write("</tr>");
 
       }
-      document.write("</table>");
+      document.write("</table>");*/
 
     </script>
   </body>
