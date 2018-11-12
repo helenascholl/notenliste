@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Schüler Klassen Zeug</title>
+  </head>
+  <body>
+      <script src="js/daten.js"></script>
+    <script>
+
+      
+
+      array["Dorfi"] = "";
+      array["Fuchs"] = "";
+      array["Lukas"] = "";
+
+      for (let i in array) {
+        array[i] = new Array();
+        array[i]["MEDT"] = 2;
+        array[i]["DE"] = 3;
+        array[i]["MEDPR"] = 5;
+        array[i]["EN"] = 4;
+        array[i]["SEW"] = 1;
+      }
+
+      document.write("<table><tr>");
+      for (let i in array) {
+        document.write("<th>" + i + "</th>");
+      }
+      document.write("</tr>");
+
+      for (let i in array) {
+
+        document.write("<tr>");
+        for (let j in array[i]) {
+          document.write("<tb>" + j + ": " + array[i][j] + "</tb>");
+        }
+        document.write("</tr>");
+
+      }
+      document.write("</table>");
+
+    </script>
+  </body>
+</html>
