@@ -3,8 +3,11 @@ klassen['1AHITM'] = new Array();
 klassen['1BHITM'] = new Array();
 klassen['2AHITM'] = new Array();
 klassen['2BHITM'] = new Array();
-  
-klassen['1AHITM']['Schueler'] = [
+
+const schueler = new Array(4);
+const faecher = new Array(2);
+
+schueler['1AHITM'] = [
     '1',
     '2',
     '3',
@@ -15,23 +18,10 @@ klassen['1AHITM']['Schueler'] = [
     '8',
     '9',
     '10'
-]
-  
-klassen['1AHITM']['Faecher'] = [
-    '2',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10'
-]
-  
-klassen['1BHITM']['Schueler'] = [
-    '3',
+];
+
+schueler['1BHITM'] = [
+    '1',
     '2',
     '3',
     '4',
@@ -41,10 +31,10 @@ klassen['1BHITM']['Schueler'] = [
     '8',
     '9',
     '10'
-]
-  
-klassen['1BHITM']['Faecher'] = [
-    '4',
+];
+
+schueler['2AHITM'] = [
+    '1',
     '2',
     '3',
     '4',
@@ -54,10 +44,10 @@ klassen['1BHITM']['Faecher'] = [
     '8',
     '9',
     '10'
-]
-  
-klassen['2AHITM']['Schueler'] = [
-    '5',
+];
+
+schueler['2BHITM'] = [
+    '1',
     '2',
     '3',
     '4',
@@ -67,10 +57,10 @@ klassen['2AHITM']['Schueler'] = [
     '8',
     '9',
     '10'
-]
-  
-klassen['2AHITM']['Faecher'] = [
-    '6',
+];
+
+faecher['1. Klassen'] = [
+    '1',
     '2',
     '3',
     '4',
@@ -80,10 +70,10 @@ klassen['2AHITM']['Faecher'] = [
     '8',
     '9',
     '10'
-]
-        
-klassen['2BHITM']['Schueler'] = [
-    '7',
+];
+
+faecher['2. Klassen'] = [
+    '1',
     '2',
     '3',
     '4',
@@ -93,17 +83,4 @@ klassen['2BHITM']['Schueler'] = [
     '8',
     '9',
     '10'
-]
-  
-klassen['2BHITM']['Faecher'] = [
-    '8',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10'
-]
+];

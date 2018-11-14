@@ -10,9 +10,16 @@
     <script>
 
       function declareForm() {
-          document.write('<form onchange="refreshForm()">');
 
-          document.write('<select id="klassen">');
+        for (let i in klassen) {
+          for (let j in klassen[i]) {
+            klassen[i][schueler[i]
+          }   
+        }
+
+          document.write('<form>');
+
+          document.write('<select id="klassen" onchange="refreshForm()"> value="Klassen"');
           for (let i in klassen) {
             document.write('<option>' + i + '</option>');
           }
