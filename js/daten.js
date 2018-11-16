@@ -1,4 +1,4 @@
-const klassen = new Array(4);
+let klassen = new Array(4);
 klassen['1AHITM'] = new Array();
 klassen['1BHITM'] = new Array();
 klassen['2AHITM'] = new Array();
@@ -8,10 +8,10 @@ const schueler = new Array(4);
 const faecher = new Array(2);
 
 schueler['1AHITM'] = [
-    '1',
-    '2',
-    '3',
-    '4',
+    'Fabian',
+    'Lukas',
+    'Sebastian',
+    'Jonas',
     '5',
     '6',
     '7',
@@ -60,9 +60,9 @@ schueler['2BHITM'] = [
 ];
 
 faecher['1. Klassen'] = [
-    '1',
-    '2',
-    '3',
+    'NWT',
+    'SEW',
+    'EN',
     '4',
     '5',
     '6',
