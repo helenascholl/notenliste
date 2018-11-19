@@ -18,8 +18,10 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <input type="submit" value="Eintragen" onclick="assignMark()">
+      <button onclick="assignMark()">Eintragen</button>
     </form>
+
+    <div id="wrapper"></div>
 
     <script src="./js/daten.js"></script>
     <script>
@@ -30,7 +32,7 @@
           for (let j in schueler[i]) {
             klassen[i][schueler[i][j]] = new Array();
             for (let k in faecher[i.charAt(0) + '. Klassen']) {
-              klassen[i][schueler[i][j]][faecher[i.charAt(0) + '. Klassen'][k]] = 'NaN';
+              klassen[i][schueler[i][j]][faecher[i.charAt(0) + '. Klassen'][k]] = undefined;
             }
           }
         }
@@ -77,33 +79,40 @@
 
       function assignMark() {
 
-        let klasse = document.getElementById('klasse').value;
-        let schueler = document.getElementById('schueler').value;
-        let fach = document.getElementById('fach').value;
-        let note = document.getElementById('note').value;
+        var klasseValue = document.getElementById('klasse').value;
+        var schuelerValue = document.getElementById('schueler').value;
+        var fachValue = document.getElementById('fach').value;
+        var noteValue = document.getElementById('note').value;
 
-        klassen[klasse][schueler][fach] = note;
+        klassen[klasseValue][schuelerValue][fachValue] = noteValue;
 
-        printMarks();
+        //printMarks();
 
       }
 
       function printMarks() {
 
-        let klasse = document.getElementById('klasse').value;
+        /*let klasse = document.getElementById('klasse').value;
         let schueler = document.getElementById('schueler').value;
         let fach = document.getElementById('fach').value;
-        let note = document.getElementById('note').value;
+        let note = document.getElementById('note').value;*/
 
-        for (let i in klasse) {
-          for (let j in klasse[i]) {
-            for (let k in klasse[i][j]) {
-              for (let l in klasse[i][j][k]) {
-                document.write('<p>' + klasse[i][j][k][l] + '</p>');
+        let innerHTML = document.getElementById('wrapper').value;
+
+        for (let i in klassen) {
+          innerHTML += '<p>' + klassen[i] + '</p>';
+          for (let j in klassen[i]) {
+            innerHTML += '<p>' + klassen[i][j] + '</p>';
+            for (let k in klassen[i][j]) {
+              innerHTML += '<p>' + klassen[i][j][k] + '</p>';
+              for (let l in klassen[i][j][k]) {
+                innerHTML += '<p>' + klassen[i][j][k][l] + '</p>';
               }
             }
           }
         }
+
+        document.getElementById('wrapper').innerHTML = innerHTML;
 
       }
 
