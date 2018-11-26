@@ -1,9 +1,3 @@
-let klassen = new Array(4);
-klassen['1AHITM'] = new Array();
-klassen['1BHITM'] = new Array();
-klassen['2AHITM'] = new Array();
-klassen['2BHITM'] = new Array();
-
 const schueler = new Array(4);
 const faecher = new Array(2);
 
