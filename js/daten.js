@@ -2,7 +2,7 @@ const schueler = new Array(4);
 const faecher = new Array(2);
 
 schueler['1AHITM'] = [
-    'Fabian',
+    'Fabian Stockmayr',
     'Lukas',
     'Sebastian',
     'Jonas',
