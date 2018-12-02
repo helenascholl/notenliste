@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+form {
+    margin: auto;
+}
+button:hover {
+    cursor: pointer;
+}
+select, button {
+    height: 10vh;
+    font-size: 2vw;
+    border-radius: 1vw;
+    border: 5px solid #515151;
+    transition: border-color 1s;
+}
+select:focus-within, select:hover, button:hover {
+    border-color: black;
+}
+select:nth-child(2) {
+    width: 20vw;
+}
+option {
+    text-align: center;
+}
+p {
+    text-align: center;
+}

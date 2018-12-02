@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Notenliste</title>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="icon" href="./img/icon.png" type="image/x-icon"/>
   </head>
   <body onload="declareForm();">
 
@@ -25,183 +27,13 @@
         <tr>
             <th>Klasse</th>
             <th>Nachname</th>
+            <th>Vorname</th>
             <th>Fach</th>
             <th>Note</th>
         </tr>
     </table>
 
     <script src="./js/daten.js"></script>
-    <script>
-
-      let noten = new Array();
-
-      function declareForm() {
-
-        /*if (klassen == undefined) {
-            klassen = new Array(schueler.length);
-
-           for (let i in schueler) {
-             klassen[i] = new Array();
-           }
-
-          for (let i in klassen) {
-            for (let j in schueler[i]) {
-              klassen[i][schueler[i][j]] = new Array();
-              for (let k in faecher[i.charAt(0) + '. Klassen']) {
-                klassen[i][schueler[i][j]][faecher[i.charAt(0) + '. Klassen'][k]] = undefined;
-              }
-            }
-          }*/
-
-          let innerHTML = '<option disabled selected>Klasse</option>';
-
-          for (let klasse in schueler) {
-            innerHTML += '<option value="' + klasse + '">' + klasse + '</option>';
-          }
-          document.getElementById('klasse').innerHTML = innerHTML;
-
-          refreshForm();
-        }
-
-      //}
-
-      function refreshForm() {
-
-        let innerHTML = '<option disabled selected>Schüler</option>';
-        let index = document.getElementById('klasse').value;
-
-        for (let i in schueler[index]) {
-          innerHTML += '<option value="' + schueler[index][i] + '">' + schueler[index][i] + '</option>';
-        }
-        document.getElementById('schueler').innerHTML = innerHTML;
-
-        innerHTML = '<option disabled selected>Fach</option>';
-        index = document.getElementById('klasse').value.charAt(0) + '. Klassen';
-        for (let i in faecher[index]) {
-          innerHTML += '<option value="' + faecher[index][i] + '">' + faecher[index][i] + '</option>';
-        }
-        document.getElementById('fach').innerHTML = innerHTML;
-
-        
-
-            /*document.write('<select>');
-            for (let i in klassen[document.getElementById('klassen').value]['Faecher']) {
-              document.write('<option>' + i + '</option>');
-            }
-            document.write('</select>');
-
-            document.write('<select>');
-            for (let i in klassen[document.getElementById('klassen').value]['Schueler']) {
-              document.write('<option>' + i + '</option>');
-            }
-            document.write('</select>');*/
-      }
-
-      function assignMark() {
-
-        let klasseValue = document.getElementById('klasse').value;
-        let schuelerValue = document.getElementById('schueler').value;
-        let fachValue = document.getElementById('fach').value;
-        let noteValue = document.getElementById('note').value;
-
-        noten[klasseValue] = new Array();
-        noten[klasseValue][schuelerValue] = new Array();
-        noten[klasseValue][schuelerValue][fachValue] = noteValue;
-
-        printMarks();
-      }
-
-      function printMarks() {
-
-        //let innerHTML = '<tr>';
-        let arrayLenght = 0;
-        let notenStrings;
-        let index = 0;
-        
-        for (let klasse in noten) {
-          for (let schueler in noten[klasse]) {
-            for (let fach in noten[klasse][schueler]) {
-              arrayLenght++;
-            }
-          }
-        }
-
-        notenStrings = new Array(arrayLenght);
-
-        for (let klasse in noten) {
-          for (let schuelerIndex in noten[klasse]) {
-            for (let fach in noten[klasse][schuelerIndex]) {
-              notenStrings[index] = '<tr><td>' + klasse +
-                '</td><td>' + schuelerIndex.split(' ')[0] +
-                '</td><td>' + schuelerIndex.split(' ')[1] +
-                '</td><td>' + fach +
-                '</td><td>' + noten[klasse][schuelerIndex][fach] +
-                '</td></tr>';
-              index++;
-            }
-          }
-        }
-
-        for (let i in notenStrings) {
-          document.getElementById('table').innerHTML += notenStrings[i];
-        }
-
-
-
-        /*let klasse = document.getElementById('klasse').value;
-        let schueler = document.getElementById('schueler').value;
-        let fach = document.getElementById('fach').value;
-        let note = document.getElementById('note').value;*/
-
-        /*let innerHTML = document.getElementById('wrapper').value;
-
-        for (let i in klassen) {
-          innerHTML += '<p>' + klassen[i] + '</p>';
-          for (let j in klassen[i]) {
-            innerHTML += '<p>' + klassen[i][j] + '</p>';
-            for (let k in klassen[i][j]) {
-              innerHTML += '<p>' + klassen[i][j][k] + '</p>';
-              for (let l in klassen[i][j][k]) {
-                innerHTML += '<p>' + klassen[i][j][k][l] + '</p>';
-              }
-            }
-          }
-        }
-
-        document.getElementById('wrapper').innerHTML = innerHTML;*/
-
-      }
-
-      /*array["Dorfi"] = "";
-      array["Fuchs"] = "";
-      array["Lukas"] = "";
-
-      for (let i in array) {
-        array[i] = new Array();
-        array[i]["MEDT"] = 2;
-        array[i]["DE"] = 3;
-        array[i]["MEDPR"] = 5;
-        array[i]["EN"] = 4;
-        array[i]["SEW"] = 1;
-      }
-
-      document.write("<table><tr>");
-      for (let i in array) {
-        document.write("<th>" + i + "</th>");
-      }
-      document.write("</tr>");
-
-      for (let i in array) {
-
-        document.write("<tr>");
-        for (let j in array[i]) {
-          document.write("<tb>" + j + ": " + array[i][j] + "</tb>");
-        }
-        document.write("</tr>");
-
-      }
-      document.write("</table>");*/
-
-    </script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
