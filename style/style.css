@@ -2,9 +2,10 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 form {
-    margin: auto;
+    margin-bottom: 5vw;
 }
 button:hover {
     cursor: pointer;
@@ -13,18 +14,44 @@ select, button {
     height: 10vh;
     font-size: 2vw;
     border-radius: 1vw;
-    border: 5px solid #515151;
-    transition: border-color 1s;
+    border: 5px solid #7c7c7c;
+    transition: border-color 500ms, background-color 100ms;
 }
 select:focus-within, select:hover, button:hover {
     border-color: black;
 }
+button:active {
+    background-color: #00c133;
+}
 select:nth-child(2) {
-    width: 20vw;
+    width: 30vw;
+}
+select:nth-child(3) {
+    width: 10vw;
 }
 option {
     text-align: center;
 }
 p {
+    text-align: center;
+}
+table {
+    font-size: 2vw;
+    text-align: center;
+    width: 100%;
+}
+tr {
+    display: flex;
+    justify-content: space-between;
+}
+td, th {
+    border-right: 1px solid black;
+    width: 100%;
+}
+td:last-child, th:last-child {
+    border-right: none;
+}
+h1 {
+    font-size: 4vw;
     text-align: center;
 }

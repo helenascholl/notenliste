@@ -8,30 +8,34 @@
   </head>
   <body onload="declareForm();">
 
-    <form>
-      <select id="klasse" onchange="refreshForm()"></select>
-      <select id="schueler"></select>
-      <select id="fach"></select>
-      <select id="note">
-        <option disabled selected>Note</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button onclick="assignMark()">Eintragen</button>
-    </form>
+    <div>
+      <h1>Notenliste</h1>
 
-    <table id="table">
-        <tr>
-            <th>Klasse</th>
-            <th>Nachname</th>
-            <th>Vorname</th>
-            <th>Fach</th>
-            <th>Note</th>
-        </tr>
-    </table>
+      <form>
+        <select id="klasse" onchange="refreshForm()"></select>
+        <select id="schueler"></select>
+        <select id="fach"></select>
+        <select id="note">
+          <option disabled selected>Note</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button onclick="assignMark()">Eintragen</button>
+      </form>
+
+      <table id="table">
+          <tr>
+              <th>Klasse</th>
+              <th>Nachname</th>
+              <th>Vorname</th>
+              <th>Fach</th>
+              <th>Note</th>
+          </tr>
+      </table>
+    </div>
 
     <script src="./js/daten.js"></script>
     <script src="./js/script.js"></script>
