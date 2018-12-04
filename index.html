@@ -17,27 +17,33 @@
         <select id="fach"></select>
         <select id="note">
           <option disabled selected>Note</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option value="Sehr Gut">Sehr Gut</option>
+          <option value="Gut">Gut</option>
+          <option value="Befriedigend">Befriedigend</option>
+          <option value="Genügend">Genügend</option>
+          <option value="Nicht Genügend">Nicht Genügend</option>
+          <option value="Nicht Beurteilt">Nicht Beurteilt</option>
         </select>
-        <button onclick="assignMark()">Eintragen</button>
+        <input type="button" value="Eintragen" onclick="assignMark()">
       </form>
 
-      <table id="table">
-          <tr>
-              <th>Klasse</th>
-              <th>Nachname</th>
-              <th>Vorname</th>
-              <th>Fach</th>
-              <th>Note</th>
-          </tr>
-      </table>
+      <form>
+        <input id="rows" type="number" placeholder="Zeile">
+        <input type="button" value="Löschen" onclick="removeRow()">
+      </form>
+
+      <div id="outputBox">
+        <div>
+          <div>Klasse</div>
+          <div>Nachname</div>
+          <div>Vorname</div>
+          <div>Fach</div>
+          <div>Note</div>
+        </div>
+      </div>
     </div>
 
-    <script src="./js/daten.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./script/daten.js"></script>
+    <script src="./script/script.js"></script>
   </body>
 </html>
