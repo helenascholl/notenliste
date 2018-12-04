@@ -57,6 +57,7 @@ function assignMark() {
 
 function printMarks() {
     let newDiv = document.createElement('div');
+
     let klasseDiv = document.createElement('div');
     let nachnameDiv = document.createElement('div');
     let vornameDiv = document.createElement('div');
@@ -69,26 +70,34 @@ function printMarks() {
     let fachValue = document.getElementById('fach').value;
     let noteValue = document.getElementById('note').value;
 
-    let divs = [klasseDiv, nachnameDiv, vornameDiv, fachDiv];
+    let outputBox = document.getElementById('outputBox');
+    let override = false;
 
-    document.getElementById('outputBox').appendChild(newDiv);
-
-    for (let i in document.getElementById('outputBox').childNodes) {
-        if (document.getElementById('outputBox').childNodes[i].childNodes[0].textContent == klasseValue
-            &&)
+    for (let i = 1; i < outputBox.childNodes.length; i += 2) {
+        if (outputBox.childNodes[i].childNodes[0].textContent == klasseValue
+            && outputBox.childNodes[i].childNodes[1].textContent == nachnameValue
+            && outputBox.childNodes[i].childNodes[2].textContent == vornameValue
+            && outputBox.childNodes[i].childNodes[3].textContent == fachValue) {
+                outputBox.childNodes[i].childNodes[4].textContent = noteValue;
+                override = true;
+        }
     }
 
-    klasseDiv.textContent = klasseValue;
-    nachnameDiv.textContent = nachnameValue;
-    vornameDiv.textContent = vornameValue;
-    fachDiv.textContent = fachValue;
-    noteDiv.textContent = noteValue;
+    if (!override) {
+        outputBox.appendChild(newDiv);
 
-    newDiv.appendChild(klasseDiv);
-    newDiv.appendChild(nachnameDiv);
-    newDiv.appendChild(vornameDiv);
-    newDiv.appendChild(fachDiv);
-    newDiv.appendChild(noteDiv);
+        klasseDiv.textContent = klasseValue;
+        nachnameDiv.textContent = nachnameValue;
+        vornameDiv.textContent = vornameValue;
+        fachDiv.textContent = fachValue;
+        noteDiv.textContent = noteValue;
+
+        newDiv.appendChild(klasseDiv);
+        newDiv.appendChild(nachnameDiv);
+        newDiv.appendChild(vornameDiv);
+        newDiv.appendChild(fachDiv);
+        newDiv.appendChild(noteDiv);
+    }
 }
 
 function removeRow() {
