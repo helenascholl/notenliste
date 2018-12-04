@@ -1,27 +1,35 @@
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
+    user-select: none;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    background: #f7f7f7;
+}
+#wrapper {
+    width: 80vw;
+    margin: auto;
+}
+h1 {
+    font-size: 4vw;
+    text-align: center;
 }
 form {
-    margin-bottom: 5vw;
-}
-button:hover {
-    cursor: pointer;
-}
-select, button {
-    height: 10vh;
     font-size: 2vw;
-    border-radius: 1vw;
-    border: 5px solid #7c7c7c;
-    transition: border-color 500ms, background-color 100ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
-select:focus-within, select:hover, button:hover {
-    border-color: black;
+p {
+    display: inline-block;
+    margin: 1vw;
 }
-button:active {
-    background-color: #00c133;
+select, input {
+    margin: 0 0.1vw;
+    font-size: 2vw;
+    color: black;
+    border: 2px solid black;
+    transition: border-color 200ms;
 }
 select:nth-child(2) {
     width: 30vw;
@@ -29,29 +37,44 @@ select:nth-child(2) {
 select:nth-child(3) {
     width: 10vw;
 }
-option {
-    text-align: center;
+input[type=number] {
+    padding: 0 2px 1px 2px;
+    width: 4vw;
 }
-p {
-    text-align: center;
+input[type=button] {
+    margin-left: 0.5vw;
 }
-table {
-    font-size: 2vw;
-    text-align: center;
+select:focus, select:hover, input[type=number]:hover, input[type=number]:focus, input[type=button]:focus {
+    border-color: #7c7c7c;
+    outline: none;
+}
+input[type=button]:hover {
+    cursor: pointer;
+}
+#heading {
+    box-sizing: border-box;
+    padding-right: 1vw;
+    margin-top: 10vh;
+    font-weight: bold;
+    font-size: 1.3vw;
+}
+#heading div {
+    width: 10vw;
+    margin: 0.1vw 0;
+    border-bottom: 1px solid black;
+}
+#outputBox {
+    font-size: 1vw;
+    overflow-y: scroll;
+    height: 40vh;
+}
+#outputBox div, #heading {
     width: 100%;
-}
-tr {
     display: flex;
-    justify-content: space-between;
-}
-td, th {
-    border-right: 1px solid black;
-    width: 100%;
-}
-td:last-child, th:last-child {
-    border-right: none;
-}
-h1 {
-    font-size: 4vw;
+    justify-content: space-around;
     text-align: center;
+}
+#outputBox div div {
+    width: 10vw;
+    margin: 0.1vw 0;
 }

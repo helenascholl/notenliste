@@ -8,7 +8,7 @@
   </head>
   <body onload="declareForm();">
 
-    <div>
+    <div id="wrapper">
       <h1>Notenliste</h1>
 
       <form>
@@ -28,19 +28,20 @@
       </form>
 
       <form>
-        <input id="rows" type="number" placeholder="Zeile">
+        <p>Zeile löschen:</p>
+        <input id="rows" type="number">
         <input type="button" value="Löschen" onclick="removeRow()">
       </form>
 
-      <div id="outputBox">
-        <div>
+      <div id="heading">
           <div>Klasse</div>
           <div>Nachname</div>
           <div>Vorname</div>
           <div>Fach</div>
           <div>Note</div>
-        </div>
       </div>
+
+      <div id="outputBox"></div>
     </div>
 
     <script src="./script/daten.js"></script>

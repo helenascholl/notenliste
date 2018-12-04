@@ -73,7 +73,7 @@ function printMarks() {
     let outputBox = document.getElementById('outputBox');
     let override = false;
 
-    for (let i = 1; i < outputBox.childNodes.length; i += 2) {
+    for (let i = 0; i < outputBox.childNodes.length; i++) {
         if (outputBox.childNodes[i].childNodes[0].textContent == klasseValue
             && outputBox.childNodes[i].childNodes[1].textContent == nachnameValue
             && outputBox.childNodes[i].childNodes[2].textContent == vornameValue
@@ -101,13 +101,12 @@ function printMarks() {
 }
 
 function removeRow() {
-    let rowsCount = parseInt(document.getElementById('rows').value);
+    let rowsCount = parseInt(document.getElementById('rows').value) - 1;
     let outputBox = document.getElementById('outputBox');
 
-    if (rowsCount < 1 || rowsCount > outputBox.childElementCount - 1) {
+    if (rowsCount < 0 || rowsCount > outputBox.childElementCount - 1) {
         alert("Bitte wählen Sie eine gültige Zeile aus.");
     } else {
-        outputBox.removeChild(outputBox.childNodes[rowsCount + 1]);
-        outputBox.removeChild(outputBox.childNodes[rowsCount + 1]);
+        outputBox.removeChild(outputBox.childNodes[rowsCount]);
     }
 }
