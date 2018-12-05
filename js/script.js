@@ -9,13 +9,21 @@ function declareForm() {
 
     let innerHTML = '<option disabled selected>Klasse</option>';
 
+    document.getElementById('rows').value = 1;
+
     for (let klasse in schueler) {
         innerHTML += '<option value="' + klasse + '">' + klasse + '</option>';
     }
     document.getElementById('klasse').innerHTML = innerHTML;
 
     refreshForm();
+    
+    setHeadingPadding();
 
+}
+
+function setHeadingPadding() {
+    document.getElementById('heading').style.paddingRight = getScrollbarWidth() / window.innerWidth * 100 + 'vw';
 }
 
 function refreshForm() {
@@ -109,4 +117,26 @@ function removeRow() {
     } else {
         outputBox.removeChild(outputBox.childNodes[rowsCount]);
     }
+}
+
+function getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar";
+
+    document.body.appendChild(outer);
+
+    var widthNoScroll = outer.offsetWidth;
+    outer.style.overflow = "scroll";
+
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);        
+
+    var widthWithScroll = inner.offsetWidth;
+
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
 }

@@ -53,7 +53,6 @@ input[type=button]:hover {
 }
 #heading {
     box-sizing: border-box;
-    padding-right: 1vw;
     margin-top: 10vh;
     font-weight: bold;
     font-size: 1.3vw;
